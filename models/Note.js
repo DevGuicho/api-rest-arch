@@ -15,7 +15,8 @@ const noteSchema = new Schema({
   },
   user: {
     type: Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'User',
+    required: true
   }
 });
 
@@ -27,6 +28,6 @@ noteSchema.set('toJSON', {
   }
 });
 
-const Note = model('note', noteSchema);
+const Note = model('Note', noteSchema);
 
 module.exports = Note;

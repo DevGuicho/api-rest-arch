@@ -30,6 +30,6 @@ userSchema.set('toJSON', {
   }
 });
 
-const Note = model('Note', userSchema);
+const User = model('User', userSchema);
 
-module.exports = Note;
+module.exports = User;

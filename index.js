@@ -17,6 +17,7 @@ const {
 const port = config.port || process.env.PORT;
 
 // MIDDLEWARES
+app.use(express.json());
 app.use(cors());
 app.use(morgan('dev'));
 
