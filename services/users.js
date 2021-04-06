@@ -17,6 +17,11 @@ class UsersService {
     return user;
   }
 
+  async getUserByEmail(email) {
+    const user = await User.findOne({ email });
+    return user;
+  }
+
   async createUser(user) {
     const hashPassword = await bcrypt.hash(user.password, 10);
 
