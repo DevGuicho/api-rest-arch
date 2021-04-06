@@ -4,7 +4,11 @@ const bcrypt = require('bcryptjs');
 
 class UsersService {
   async getUsers() {
-    const users = await User.find({});
+    const users = await User.find({}).populate('notes', {
+      content: 1,
+      important: 1,
+      date: 1
+    });
     return users;
   }
 

@@ -8,7 +8,10 @@ class NotesServices {
   }
 
   async getNotes() {
-    const notes = await Note.find({});
+    const notes = await Note.find({}).populate('user', {
+      email: 1,
+      name: 1
+    });
     return notes;
   }
 
